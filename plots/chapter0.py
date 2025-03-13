@@ -405,7 +405,7 @@ def figure10(b, w, bs, ws, all_losses, manual_grad_b, manual_grad_w, lr):
 
     # Annotations
     axs[0].annotate(r'$\eta = {:.2f}$'.format(lr), xy=(1.6, 5.5), c='k', fontsize=17)
-    axs[0].annotate(r'$-\eta \frac{\delta MSE}{\delta b} \approx' + '{:.2f}$'.format(-lr * manual_grad_w), xy=(1, 2), c='k', fontsize=17)
+    axs[0].annotate(r'$-\eta \frac{\delta MSE}{\delta w} \approx' + '{:.2f}$'.format(-lr * manual_grad_w), xy=(1, 2), c='k', fontsize=17)
 
     axs[1].set_ylim([-.1, 6.1])
     axs[1].set_xlabel('b')
@@ -425,7 +425,7 @@ def figure10(b, w, bs, ws, all_losses, manual_grad_b, manual_grad_w, lr):
 
     # Annotations
     axs[1].annotate(r'$\eta = {:.2f}$'.format(lr), xy=(0.6, 5.5), c='k', fontsize=17)
-    axs[1].annotate(r'$-\eta \frac{\delta MSE}{\delta w} \approx' + '{:.2f}$'.format(-lr * manual_grad_b), xy=(1, 2), c='k', fontsize=17)
+    axs[1].annotate(r'$-\eta \frac{\delta MSE}{\delta b} \approx' + '{:.2f}$'.format(-lr * manual_grad_b), xy=(1, 2), c='k', fontsize=17)
 
     fig.tight_layout()
     return fig, axs
