@@ -262,7 +262,9 @@ def figure7(X, y, model, device, cm=None, cm_bright=None):
     ax = plt.subplot(1, 3, 1)
 
     contour = ax.contourf(xx, yy, logits, 25, cmap=cm, alpha=.8)
-    # Plot the training points
+    # Plot the training points, 
+    # X[:, 0] is the first column X1, X[:, 1] is the second column X2
+    # c is the color of the points, c=y means the color is determined by the y values
     ax.scatter(X[:, 0], X[:, 1], c=y, cmap=cm_bright)
     # Plot the testing points
     #ax.scatter(X_val[:, 0], X_val[:, 1], c=y_val, cmap=cm_bright, edgecolors='k', alpha=0.6)
@@ -298,8 +300,10 @@ def figure7(X, y, model, device, cm=None, cm_bright=None):
     # 3rd plot
     ax = plt.subplot(1, 3, 3)
 
+    # plot decision boundary
     ax.contour(xx, yy, yhat, levels=[.5], cmap="Greys", vmin=0, vmax=1)
     contour = ax.contourf(xx, yy, yhat, 25, cmap=cm, alpha=.8, vmin=0, vmax=1)
+    
     # Plot the training points
     ax.scatter(X[:, 0], X[:, 1], c=y, cmap=cm_bright)
     # Plot the testing points

@@ -24,3 +24,7 @@ for epoch in range(n_epochs):
     loss = np.mean(mini_batch_losses)
     
     losses.append(loss)
+
+    # print loss every 100 epochs
+    if epoch % 100 == 0:
+        print(f'Epoch {epoch}/{n_epochs}, Loss: {loss}')
